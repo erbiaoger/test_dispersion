@@ -1,0 +1,986 @@
+2024-06-04 14:45:53 | INFO  | forward.py -> setup():L210
+> 
+================================================================================
+                         SETTING UP INVERSION WORKFLOW                          
+================================================================================
+2024-06-04 14:46:02 | DEBUG | forward.py -> setup():L220
+> running setup for module 'system.Workstation'
+2024-06-04 14:46:05 | DEBUG | workstation.py -> setup():L154
+> copying par/log file to: /home/zhangzhiyu/MyProjects/test_dispersion/logs/sflog_001.txt
+2024-06-04 14:46:05 | DEBUG | workstation.py -> setup():L154
+> copying par/log file to: /home/zhangzhiyu/MyProjects/test_dispersion/logs/parameters_001.yaml
+2024-06-04 14:46:05 | DEBUG | forward.py -> setup():L220
+> running setup for module 'solver.Specfem2D'
+2024-06-04 14:46:05 | INFO  | specfem.py -> _initialize_working_directories():L830
+> initializing 3 solver directories
+2024-06-04 14:46:05 | DEBUG | specfem.py -> _initialize_working_directory():L867
+> initializing solver directory source: 001
+2024-06-04 14:46:10 | DEBUG | specfem.py -> _initialize_working_directory():L896
+> linking source '001' as 'mainsolver'
+2024-06-04 14:46:10 | DEBUG | specfem.py -> _initialize_working_directory():L867
+> initializing solver directory source: 002
+2024-06-04 14:46:20 | DEBUG | specfem.py -> _initialize_working_directory():L867
+> initializing solver directory source: 003
+2024-06-04 14:46:31 | DEBUG | forward.py -> setup():L220
+> running setup for module 'preprocess.Dispersion'
+2024-06-04 14:46:31 | DEBUG | forward.py -> setup():L220
+> running setup for module 'optimize.LBFGS'
+2024-06-04 14:46:32 | INFO  | gradient.py -> load_checkpoint():L279
+> no optimization checkpoint found, assuming first run
+2024-06-04 14:46:35 | INFO  | gradient.py -> load_checkpoint():L268
+> re-loading optimization module from checkpoint
+2024-06-04 14:46:35 | INFO  | inversion.py -> run():L183
+> 
+////////////////////////////////////////////////////////////////////////////////
+                              RUNNING ITERATION 01                              
+////////////////////////////////////////////////////////////////////////////////
+2024-06-04 14:46:35 | INFO  | forward.py -> run():L274
+> 
+================================================================================
+                           RUNNING INVERSION WORKFLOW                           
+================================================================================
+2024-06-04 14:46:35 | INFO  | forward.py -> evaluate_initial_misfit():L313
+> 
+////////////////////////////////////////////////////////////////////////////////
+                      EVALUATING MISFIT FOR INITIAL MODEL                       
+////////////////////////////////////////////////////////////////////////////////
+2024-06-04 14:46:35 | INFO  | forward.py -> evaluate_initial_misfit():L317
+> checking initial model parameters
+2024-06-04 14:46:35 | WARNING | model.py -> read_coordinates_specfem2d():L278
+> no coordinates found for assumed SPECFEM2D model, will not be able to plot figures
+2024-06-04 14:46:35 | INFO  | model.py -> _check_2d3d_parameters():L404
+> 1611.09 <= vp <= 1755.14
+2024-06-04 14:46:35 | INFO  | model.py -> _check_2d3d_parameters():L404
+> 857.65 <= vs <= 1092.92
+2024-06-04 14:46:35 | INFO  | forward.py -> evaluate_initial_misfit():L324
+> checking true/target model parameters
+2024-06-04 14:46:35 | INFO  | model.py -> _check_2d3d_parameters():L404
+> 1500.00 <= vp <= 1900.00
+2024-06-04 14:46:35 | INFO  | model.py -> _check_2d3d_parameters():L404
+> 900.00 <= vs <= 1100.00
+2024-06-04 14:46:35 | INFO  | forward.py -> prepare_data_for_solver():L358
+> preparing observation data for source 001
+2024-06-04 14:46:35 | INFO  | forward.py -> prepare_data_for_solver():L375
+> running forward simulation w/ target model for 001
+2024-06-04 14:46:35 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:46:36 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:46:39 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:46:39 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:46:39 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:46:39 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:46:42 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:46:45 | INFO  | forward.py -> prepare_data_for_solver():L358
+> preparing observation data for source 002
+2024-06-04 14:46:45 | INFO  | forward.py -> prepare_data_for_solver():L375
+> running forward simulation w/ target model for 002
+2024-06-04 14:46:45 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:46:46 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:46:48 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:46:48 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:46:48 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:46:49 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:46:52 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:46:54 | INFO  | forward.py -> prepare_data_for_solver():L358
+> preparing observation data for source 003
+2024-06-04 14:46:54 | INFO  | forward.py -> prepare_data_for_solver():L375
+> running forward simulation w/ target model for 003
+2024-06-04 14:46:54 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:46:55 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:46:58 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:46:58 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:46:58 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:46:59 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:47:01 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:47:04 | WARNING | model.py -> read_coordinates_specfem2d():L278
+> no coordinates found for assumed SPECFEM2D model, will not be able to plot figures
+2024-06-04 14:47:04 | INFO  | migration.py -> run_adjoint_simulations():L129
+> 
+////////////////////////////////////////////////////////////////////////////////
+                EVALUATING EVENT KERNELS W/ ADJOINT SIMULATIONS                 
+////////////////////////////////////////////////////////////////////////////////
+2024-06-04 14:47:04 | INFO  | migration.py -> run_adjoint_simulation():L119
+> running adjoint simulation for source 001
+2024-06-04 14:47:04 | INFO  | specfem.py -> adjoint_simulation():L587
+> running SPECFEM executable bin/xspecfem2D, log to 'adj_solver.log'
+2024-06-04 14:47:04 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:47:09 | DEBUG | specfem.py -> adjoint_simulation():L597
+> renaming output event kernels: 'alpha' -> 'vp'
+2024-06-04 14:47:09 | DEBUG | specfem.py -> adjoint_simulation():L603
+> renaming output event kernels: 'beta' -> 'vs'
+2024-06-04 14:47:09 | INFO  | migration.py -> run_adjoint_simulation():L119
+> running adjoint simulation for source 002
+2024-06-04 14:47:09 | INFO  | specfem.py -> adjoint_simulation():L587
+> running SPECFEM executable bin/xspecfem2D, log to 'adj_solver.log'
+2024-06-04 14:47:09 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:47:14 | DEBUG | specfem.py -> adjoint_simulation():L597
+> renaming output event kernels: 'alpha' -> 'vp'
+2024-06-04 14:47:14 | DEBUG | specfem.py -> adjoint_simulation():L603
+> renaming output event kernels: 'beta' -> 'vs'
+2024-06-04 14:47:15 | INFO  | migration.py -> run_adjoint_simulation():L119
+> running adjoint simulation for source 003
+2024-06-04 14:47:15 | INFO  | specfem.py -> adjoint_simulation():L587
+> running SPECFEM executable bin/xspecfem2D, log to 'adj_solver.log'
+2024-06-04 14:47:15 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:47:20 | DEBUG | specfem.py -> adjoint_simulation():L597
+> renaming output event kernels: 'alpha' -> 'vp'
+2024-06-04 14:47:20 | DEBUG | specfem.py -> adjoint_simulation():L603
+> renaming output event kernels: 'beta' -> 'vs'
+2024-06-04 14:47:22 | INFO  | migration.py -> postprocess_event_kernels():L172
+> 
+////////////////////////////////////////////////////////////////////////////////
+                      GENERATING/PROCESSING MISFIT KERNEL                       
+////////////////////////////////////////////////////////////////////////////////
+2024-06-04 14:47:22 | INFO  | migration.py -> combine_event_kernels():L141
+> combining event kernels into single misfit kernel
+2024-06-04 14:47:23 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xcombine_sem vp_kernel kernel_paths /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/misfit_kernel'
+2024-06-04 14:47:24 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xcombine_sem vs_kernel kernel_paths /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/misfit_kernel'
+2024-06-04 14:47:24 | INFO  | migration.py -> smooth_misfit_kernel():L150
+> smoothing misfit kernel: H=10.0; V=10.0
+2024-06-04 14:47:24 | DEBUG | specfem.py -> smooth():L699
+> smoothing ['vp', 'vs'] with horizontal Gaussian 10.0m and vertical Gaussian 10.0m
+2024-06-04 14:47:26 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xsmooth_sem 10.0 10.0 vp_kernel /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/mk_nosmooth/ /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/misfit_kernel/ .false'
+2024-06-04 14:47:33 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xsmooth_sem 10.0 10.0 vs_kernel /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/mk_nosmooth/ /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/misfit_kernel/ .false'
+2024-06-04 14:47:39 | INFO  | migration.py -> evaluate_gradient_from_kernels():L183
+> scaling gradient to absolute model perturbations
+2024-06-04 14:47:39 | WARNING | model.py -> read_coordinates_specfem2d():L278
+> no coordinates found for assumed SPECFEM2D model, will not be able to plot figures
+2024-06-04 14:47:39 | WARNING | model.py -> read_coordinates_specfem2d():L278
+> no coordinates found for assumed SPECFEM2D model, will not be able to plot figures
+2024-06-04 14:47:40 | INFO  | migration.py -> evaluate_gradient_from_kernels():L229
+> exporting gradient to disk
+2024-06-04 14:47:40 | DEBUG | inversion.py -> evaluate_gradient_from_kernels():L344
+> /home/zhangzhiyu/MyProjects/test_dispersion/output/gradient -> /home/zhangzhiyu/MyProjects/test_dispersion/output/GRADIENT_01
+2024-06-04 14:47:40 | WARNING | model.py -> read_coordinates_specfem2d():L278
+> no coordinates found for assumed SPECFEM2D model, will not be able to plot figures
+2024-06-04 14:47:40 | INFO  | inversion.py -> initialize_line_search():L363
+> 
+////////////////////////////////////////////////////////////////////////////////
+                              RUNNING LINE SEARCH                               
+////////////////////////////////////////////////////////////////////////////////
+2024-06-04 14:47:40 | INFO  | inversion.py -> initialize_line_search():L364
+> initializing 'Backtrack'ing line search
+2024-06-04 14:47:40 | INFO  | LBFGS.py -> compute_direction():L160
+> first L-BFGS iteration, default to 'Gradient' descent
+2024-06-04 14:47:40 | INFO  | gradient.py -> initialize_search():L347
+> enforcing max step length safeguard
+2024-06-04 14:47:40 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00
+2024-06-04 14:47:40 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 1.26E+01
+2024-06-04 14:47:40 | INFO  | bracket.py -> calculate_step_length():L157
+> try: first evaluation, attempt guess step length, alpha=3.83E+07
+2024-06-04 14:47:40 | DEBUG | gradient.py -> initialize_search():L358
+> overwriting initial step length, alpha_new=3.36E+07
+2024-06-04 14:47:40 | INFO  | gradient.py -> initialize_search():L365
+> trial model 'm_try' parameters: 
+2024-06-04 14:47:42 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 1
+2024-06-04 14:47:42 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 01
+--------------------------------------------------------------------------------
+2024-06-04 14:47:42 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:47:42 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:47:42 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:47:43 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:47:46 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:47:48 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:47:48 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:47:48 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:47:49 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:47:52 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:47:55 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:47:55 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:47:55 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:47:56 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:47:58 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:48:01 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i01s01) == 0.00E+00
+2024-06-04 14:48:01 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 3.36E+07
+2024-06-04 14:48:01 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 1.26E+01, 0.00E+00
+2024-06-04 14:48:01 | INFO  | bracket.py -> calculate_step_length():L184
+> try: misfit not bracketed, increasing step length using golden ratio, alpha=5.44E+07
+2024-06-04 14:48:01 | INFO  | gradient.py -> update_line_search():L432
+> line search model 'm_try' parameters: 
+2024-06-04 14:48:01 | INFO  | inversion.py -> perform_line_search():L432
+> trial step unsuccessful. re-attempting line search
+2024-06-04 14:48:02 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 2
+2024-06-04 14:48:02 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 02
+--------------------------------------------------------------------------------
+2024-06-04 14:48:02 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:48:02 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:48:02 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:48:03 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:48:05 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:48:08 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:48:08 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:48:08 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:48:09 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:48:11 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:48:14 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:48:14 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:48:14 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:48:15 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:48:18 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:48:20 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i01s02) == 7.91E+00
+2024-06-04 14:48:20 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 3.36E+07, 5.44E+07
+2024-06-04 14:48:20 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 1.26E+01, 0.00E+00, 7.91E+00
+2024-06-04 14:48:20 | INFO  | bracket.py -> calculate_step_length():L171
+> pass: bracket acceptable and step length reasonable. returning minimum line search misfit.
+2024-06-04 14:48:20 | INFO  | gradient.py -> update_line_search():L432
+> line search model 'm_try' parameters: 
+2024-06-04 14:48:20 | INFO  | inversion.py -> perform_line_search():L420
+> trial step successful. finalizing line search
+2024-06-04 14:48:21 | INFO  | gradient.py -> finalize_search():L449
+> 
+FINALIZING LINE SEARCH
+--------------------------------------------------------------------------------
+2024-06-04 14:48:21 | INFO  | gradient.py -> _write_stats():L540
+> writing optimization stats
+2024-06-04 14:48:21 | INFO  | gradient.py -> finalize_search():L460
+> renaming current (new) optimization vectors as previous model (old)
+2024-06-04 14:48:21 | INFO  | gradient.py -> finalize_search():L470
+> setting accepted trial model (try) as current model (new)
+2024-06-04 14:48:21 | INFO  | gradient.py -> finalize_search():L477
+> misfit of accepted trial model is f=0.000E+00
+2024-06-04 14:48:21 | INFO  | gradient.py -> finalize_search():L479
+> resetting line search step count to 0
+2024-06-04 14:48:21 | INFO  | inversion.py -> finalize_iteration():L499
+> 
+CLEANING WORKDIR FOR NEXT ITERATION
+--------------------------------------------------------------------------------
+2024-06-04 14:48:23 | INFO  | inversion.py -> _update_thrifty_status():L538
+> thrifty inversion encountering first iteration, defaulting to standard inversion workflow
+2024-06-04 14:48:24 | INFO  | forward.py -> run():L300
+> finished all 7 tasks in task list
+2024-06-04 14:48:24 | INFO  | inversion.py -> run():L187
+> 
+////////////////////////////////////////////////////////////////////////////////
+                             COMPLETE ITERATION 01                              
+////////////////////////////////////////////////////////////////////////////////
+2024-06-04 14:48:24 | INFO  | inversion.py -> run():L189
+> setting current iteration to: 2
+2024-06-04 14:48:24 | INFO  | inversion.py -> run():L183
+> 
+////////////////////////////////////////////////////////////////////////////////
+                              RUNNING ITERATION 02                              
+////////////////////////////////////////////////////////////////////////////////
+2024-06-04 14:48:24 | INFO  | forward.py -> run():L274
+> 
+================================================================================
+                           RUNNING INVERSION WORKFLOW                           
+================================================================================
+2024-06-04 14:48:24 | INFO  | inversion.py -> evaluate_initial_misfit():L288
+> 
+////////////////////////////////////////////////////////////////////////////////
+                      EVALUATING MISFIT FOR MODEL `m_new`                       
+////////////////////////////////////////////////////////////////////////////////
+2024-06-04 14:48:25 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:48:25 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:48:25 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:48:26 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:48:29 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:48:31 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:48:31 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:48:31 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:48:32 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:48:35 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:48:38 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:48:38 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:48:38 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:48:39 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:48:41 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:48:44 | INFO  | migration.py -> run_adjoint_simulations():L129
+> 
+////////////////////////////////////////////////////////////////////////////////
+                EVALUATING EVENT KERNELS W/ ADJOINT SIMULATIONS                 
+////////////////////////////////////////////////////////////////////////////////
+2024-06-04 14:48:44 | INFO  | migration.py -> run_adjoint_simulation():L119
+> running adjoint simulation for source 001
+2024-06-04 14:48:44 | INFO  | specfem.py -> adjoint_simulation():L587
+> running SPECFEM executable bin/xspecfem2D, log to 'adj_solver.log'
+2024-06-04 14:48:44 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:48:49 | DEBUG | specfem.py -> adjoint_simulation():L597
+> renaming output event kernels: 'alpha' -> 'vp'
+2024-06-04 14:48:49 | DEBUG | specfem.py -> adjoint_simulation():L603
+> renaming output event kernels: 'beta' -> 'vs'
+2024-06-04 14:48:50 | INFO  | migration.py -> run_adjoint_simulation():L119
+> running adjoint simulation for source 002
+2024-06-04 14:48:50 | INFO  | specfem.py -> adjoint_simulation():L587
+> running SPECFEM executable bin/xspecfem2D, log to 'adj_solver.log'
+2024-06-04 14:48:50 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:48:54 | DEBUG | specfem.py -> adjoint_simulation():L597
+> renaming output event kernels: 'alpha' -> 'vp'
+2024-06-04 14:48:54 | DEBUG | specfem.py -> adjoint_simulation():L603
+> renaming output event kernels: 'beta' -> 'vs'
+2024-06-04 14:48:55 | INFO  | migration.py -> run_adjoint_simulation():L119
+> running adjoint simulation for source 003
+2024-06-04 14:48:55 | INFO  | specfem.py -> adjoint_simulation():L587
+> running SPECFEM executable bin/xspecfem2D, log to 'adj_solver.log'
+2024-06-04 14:48:55 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:49:00 | DEBUG | specfem.py -> adjoint_simulation():L597
+> renaming output event kernels: 'alpha' -> 'vp'
+2024-06-04 14:49:00 | DEBUG | specfem.py -> adjoint_simulation():L603
+> renaming output event kernels: 'beta' -> 'vs'
+2024-06-04 14:49:02 | INFO  | migration.py -> postprocess_event_kernels():L172
+> 
+////////////////////////////////////////////////////////////////////////////////
+                      GENERATING/PROCESSING MISFIT KERNEL                       
+////////////////////////////////////////////////////////////////////////////////
+2024-06-04 14:49:02 | INFO  | migration.py -> combine_event_kernels():L141
+> combining event kernels into single misfit kernel
+2024-06-04 14:49:04 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xcombine_sem vp_kernel kernel_paths /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/misfit_kernel'
+2024-06-04 14:49:04 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xcombine_sem vs_kernel kernel_paths /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/misfit_kernel'
+2024-06-04 14:49:05 | INFO  | migration.py -> smooth_misfit_kernel():L150
+> smoothing misfit kernel: H=10.0; V=10.0
+2024-06-04 14:49:05 | DEBUG | specfem.py -> smooth():L699
+> smoothing ['vp', 'vs'] with horizontal Gaussian 10.0m and vertical Gaussian 10.0m
+2024-06-04 14:49:06 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xsmooth_sem 10.0 10.0 vp_kernel /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/mk_nosmooth/ /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/misfit_kernel/ .false'
+2024-06-04 14:49:13 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xsmooth_sem 10.0 10.0 vs_kernel /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/mk_nosmooth/ /home/zhangzhiyu/MyProjects/test_dispersion/scratch/eval_grad/misfit_kernel/ .false'
+2024-06-04 14:49:19 | INFO  | migration.py -> evaluate_gradient_from_kernels():L183
+> scaling gradient to absolute model perturbations
+2024-06-04 14:49:19 | WARNING | model.py -> read_coordinates_specfem2d():L278
+> no coordinates found for assumed SPECFEM2D model, will not be able to plot figures
+2024-06-04 14:49:20 | WARNING | model.py -> read_coordinates_specfem2d():L278
+> no coordinates found for assumed SPECFEM2D model, will not be able to plot figures
+2024-06-04 14:49:20 | INFO  | migration.py -> evaluate_gradient_from_kernels():L229
+> exporting gradient to disk
+2024-06-04 14:49:20 | DEBUG | inversion.py -> evaluate_gradient_from_kernels():L344
+> /home/zhangzhiyu/MyProjects/test_dispersion/output/gradient -> /home/zhangzhiyu/MyProjects/test_dispersion/output/GRADIENT_02
+2024-06-04 14:49:20 | WARNING | model.py -> read_coordinates_specfem2d():L278
+> no coordinates found for assumed SPECFEM2D model, will not be able to plot figures
+2024-06-04 14:49:20 | INFO  | inversion.py -> initialize_line_search():L363
+> 
+////////////////////////////////////////////////////////////////////////////////
+                              RUNNING LINE SEARCH                               
+////////////////////////////////////////////////////////////////////////////////
+2024-06-04 14:49:20 | INFO  | inversion.py -> initialize_line_search():L364
+> initializing 'Backtrack'ing line search
+2024-06-04 14:49:20 | INFO  | LBFGS.py -> compute_direction():L175
+> applying inverse Hessian to gradient
+2024-06-04 14:49:20 | INFO  | LBFGS.py -> _check_status():L343
+> new search direction: 11.48° from current
+2024-06-04 14:49:20 | INFO  | LBFGS.py -> compute_direction():L183
+> new L-BFGS search direction found
+2024-06-04 14:49:20 | INFO  | gradient.py -> initialize_search():L347
+> enforcing max step length safeguard
+2024-06-04 14:49:20 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00
+2024-06-04 14:49:20 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00
+2024-06-04 14:49:20 | INFO  | backtrack.py -> calculate_step_length():L76
+> try: attempt unit step length w/ alpha=1.0
+2024-06-04 14:49:20 | INFO  | gradient.py -> initialize_search():L365
+> trial model 'm_try' parameters: 
+2024-06-04 14:49:21 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 1
+2024-06-04 14:49:21 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 01
+--------------------------------------------------------------------------------
+2024-06-04 14:49:21 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:49:21 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:49:21 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:49:21 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:49:24 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:49:27 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:49:27 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:49:27 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:49:27 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:49:30 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:49:33 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:49:33 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:49:33 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:49:34 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:49:37 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:49:40 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i02s01) == 6.98E+02
+2024-06-04 14:49:40 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 1.00E+00
+2024-06-04 14:49:40 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00, 6.98E+02
+2024-06-04 14:49:40 | INFO  | backtrack.py -> calculate_step_length():L89
+> try: misfit increasing, attempting to decrease step length to alpha=0.4999987070662565
+2024-06-04 14:49:40 | INFO  | gradient.py -> update_line_search():L432
+> line search model 'm_try' parameters: 
+2024-06-04 14:49:40 | INFO  | inversion.py -> perform_line_search():L432
+> trial step unsuccessful. re-attempting line search
+2024-06-04 14:49:41 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 2
+2024-06-04 14:49:41 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 02
+--------------------------------------------------------------------------------
+2024-06-04 14:49:41 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:49:41 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:49:41 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:49:41 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:49:44 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:49:47 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:49:47 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:49:47 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:49:48 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:49:51 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:49:53 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:49:53 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:49:53 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:49:54 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:49:57 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:50:00 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i02s02) == 3.14E+02
+2024-06-04 14:50:00 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 5.00E-01, 1.00E+00
+2024-06-04 14:50:00 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00, 3.14E+02, 6.98E+02
+2024-06-04 14:50:00 | INFO  | backtrack.py -> calculate_step_length():L89
+> try: misfit increasing, attempting to decrease step length to alpha=0.24999877240732002
+2024-06-04 14:50:00 | INFO  | gradient.py -> update_line_search():L432
+> line search model 'm_try' parameters: 
+2024-06-04 14:50:00 | INFO  | inversion.py -> perform_line_search():L432
+> trial step unsuccessful. re-attempting line search
+2024-06-04 14:50:00 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 3
+2024-06-04 14:50:00 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 03
+--------------------------------------------------------------------------------
+2024-06-04 14:50:00 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:50:00 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:50:00 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:50:01 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:50:04 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:50:07 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:50:07 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:50:07 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:50:08 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:50:10 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:50:13 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:50:13 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:50:13 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:50:14 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:50:17 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:50:19 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i02s03) == 2.97E+01
+2024-06-04 14:50:19 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 2.50E-01, 5.00E-01, 1.00E+00
+2024-06-04 14:50:19 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00, 2.97E+01, 3.14E+02, 6.98E+02
+2024-06-04 14:50:19 | INFO  | backtrack.py -> calculate_step_length():L89
+> try: misfit increasing, attempting to decrease step length to alpha=0.1249993312709897
+2024-06-04 14:50:19 | INFO  | gradient.py -> update_line_search():L432
+> line search model 'm_try' parameters: 
+2024-06-04 14:50:19 | INFO  | inversion.py -> perform_line_search():L432
+> trial step unsuccessful. re-attempting line search
+2024-06-04 14:50:21 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 4
+2024-06-04 14:50:21 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 04
+--------------------------------------------------------------------------------
+2024-06-04 14:50:21 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:50:21 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:50:21 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:50:22 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:50:24 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:50:27 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:50:27 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:50:27 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:50:28 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:50:30 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:50:33 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:50:33 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:50:33 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:50:34 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:50:37 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:50:39 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i02s04) == 1.14E+01
+2024-06-04 14:50:39 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 1.25E-01, 2.50E-01, 5.00E-01, 1.00E+00
+2024-06-04 14:50:39 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00, 1.14E+01, 2.97E+01, 3.14E+02, 6.98E+02
+2024-06-04 14:50:39 | INFO  | backtrack.py -> calculate_step_length():L89
+> try: misfit increasing, attempting to decrease step length to alpha=0.0624996445958725
+2024-06-04 14:50:39 | INFO  | gradient.py -> update_line_search():L432
+> line search model 'm_try' parameters: 
+2024-06-04 14:50:39 | INFO  | inversion.py -> perform_line_search():L432
+> trial step unsuccessful. re-attempting line search
+2024-06-04 14:50:41 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 5
+2024-06-04 14:50:41 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 05
+--------------------------------------------------------------------------------
+2024-06-04 14:50:41 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:50:41 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:50:41 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:50:42 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:50:44 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:50:47 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:50:47 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:50:47 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:50:48 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:50:51 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:50:53 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:50:53 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:50:53 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:50:54 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:50:57 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:51:00 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i02s05) == 6.74E+00
+2024-06-04 14:51:00 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 6.25E-02, 1.25E-01, 2.50E-01, 5.00E-01, 1.00E+00
+2024-06-04 14:51:00 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00, 6.74E+00, 1.14E+01, 2.97E+01, 3.14E+02, 6.98E+02
+2024-06-04 14:51:00 | INFO  | backtrack.py -> calculate_step_length():L89
+> try: misfit increasing, attempting to decrease step length to alpha=0.03124980981492166
+2024-06-04 14:51:00 | INFO  | gradient.py -> update_line_search():L432
+> line search model 'm_try' parameters: 
+2024-06-04 14:51:00 | INFO  | inversion.py -> perform_line_search():L432
+> trial step unsuccessful. re-attempting line search
+2024-06-04 14:51:02 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 6
+2024-06-04 14:51:02 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 06
+--------------------------------------------------------------------------------
+2024-06-04 14:51:02 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:51:02 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:51:02 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:51:03 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:51:05 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:51:08 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:51:08 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:51:08 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:51:09 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:51:11 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:51:14 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:51:14 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:51:14 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:51:15 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:51:18 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:51:20 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i02s06) == 0.00E+00
+2024-06-04 14:51:20 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 3.12E-02, 6.25E-02, 1.25E-01, 2.50E-01, 5.00E-01, 1.00E+00
+2024-06-04 14:51:20 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00, 0.00E+00, 6.74E+00, 1.14E+01, 2.97E+01, 3.14E+02, 6.98E+02
+2024-06-04 14:51:20 | INFO  | backtrack.py -> calculate_step_length():L89
+> try: misfit increasing, attempting to decrease step length to alpha=0.01562490490746083
+2024-06-04 14:51:20 | INFO  | gradient.py -> update_line_search():L432
+> line search model 'm_try' parameters: 
+2024-06-04 14:51:20 | INFO  | inversion.py -> perform_line_search():L432
+> trial step unsuccessful. re-attempting line search
+2024-06-04 14:51:22 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 7
+2024-06-04 14:51:22 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 07
+--------------------------------------------------------------------------------
+2024-06-04 14:51:22 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:51:22 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:51:22 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:51:22 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:51:26 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:51:28 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:51:28 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:51:28 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:51:29 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:51:32 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:51:35 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:51:35 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:51:35 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:51:35 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:51:38 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:51:41 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i02s07) == 0.00E+00
+2024-06-04 14:51:41 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 1.56E-02, 3.12E-02, 6.25E-02, 1.25E-01, 2.50E-01, 5.00E-01, 1.00E+00
+2024-06-04 14:51:41 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00, 0.00E+00, 0.00E+00, 6.74E+00, 1.14E+01, 2.97E+01, 3.14E+02, 6.98E+02
+2024-06-04 14:51:41 | INFO  | backtrack.py -> calculate_step_length():L89
+> try: misfit increasing, attempting to decrease step length to alpha=0.007812452453730415
+2024-06-04 14:51:41 | INFO  | gradient.py -> update_line_search():L432
+> line search model 'm_try' parameters: 
+2024-06-04 14:51:41 | INFO  | inversion.py -> perform_line_search():L432
+> trial step unsuccessful. re-attempting line search
+2024-06-04 14:51:43 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 8
+2024-06-04 14:51:43 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 08
+--------------------------------------------------------------------------------
+2024-06-04 14:51:43 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:51:43 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:51:43 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:51:43 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:51:46 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:51:49 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:51:49 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:51:49 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:51:50 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:51:53 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:51:56 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:51:56 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:51:56 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:51:56 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:51:59 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:52:02 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i02s08) == 0.00E+00
+2024-06-04 14:52:02 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 7.81E-03, 1.56E-02, 3.12E-02, 6.25E-02, 1.25E-01, 2.50E-01, 5.00E-01, 1.00E+00
+2024-06-04 14:52:02 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 6.74E+00, 1.14E+01, 2.97E+01, 3.14E+02, 6.98E+02
+2024-06-04 14:52:02 | INFO  | backtrack.py -> calculate_step_length():L89
+> try: misfit increasing, attempting to decrease step length to alpha=0.0039062262268652077
+2024-06-04 14:52:02 | INFO  | gradient.py -> update_line_search():L432
+> line search model 'm_try' parameters: 
+2024-06-04 14:52:02 | INFO  | inversion.py -> perform_line_search():L432
+> trial step unsuccessful. re-attempting line search
+2024-06-04 14:52:03 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 9
+2024-06-04 14:52:03 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 09
+--------------------------------------------------------------------------------
+2024-06-04 14:52:03 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:52:03 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:52:03 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:52:04 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:52:07 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:52:09 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:52:09 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:52:09 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:52:10 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:52:13 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:52:15 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:52:15 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:52:15 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:52:16 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:52:19 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:52:22 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i02s09) == 0.00E+00
+2024-06-04 14:52:22 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 3.91E-03, 7.81E-03, 1.56E-02, 3.12E-02, 6.25E-02, 1.25E-01, 2.50E-01, 5.00E-01, 1.00E+00
+2024-06-04 14:52:22 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 6.74E+00, 1.14E+01, 2.97E+01, 3.14E+02, 6.98E+02
+2024-06-04 14:52:22 | INFO  | backtrack.py -> calculate_step_length():L89
+> try: misfit increasing, attempting to decrease step length to alpha=0.0019531131134326038
+2024-06-04 14:52:22 | INFO  | gradient.py -> update_line_search():L432
+> line search model 'm_try' parameters: 
+2024-06-04 14:52:22 | INFO  | inversion.py -> perform_line_search():L432
+> trial step unsuccessful. re-attempting line search
+2024-06-04 14:52:22 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 10
+2024-06-04 14:52:22 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 10
+--------------------------------------------------------------------------------
+2024-06-04 14:52:22 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:52:22 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:52:22 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:52:23 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:52:26 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:52:28 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:52:28 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:52:28 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:52:29 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:52:32 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:52:35 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:52:35 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:52:35 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:52:36 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:52:38 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:52:41 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i02s10) == 0.00E+00
+2024-06-04 14:52:41 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 0.00E+00, 1.95E-03, 3.91E-03, 7.81E-03, 1.56E-02, 3.12E-02, 6.25E-02, 1.25E-01, 2.50E-01, 5.00E-01, 1.00E+00
+2024-06-04 14:52:41 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 0.00E+00, 6.74E+00, 1.14E+01, 2.97E+01, 3.14E+02, 6.98E+02
+2024-06-04 14:52:41 | INFO  | backtrack.py -> calculate_step_length():L94
+> fail: backtracking line search has failed because the maximum allowable step counts (10) has been exceeded
+2024-06-04 14:52:41 | DEBUG | gradient.py -> attempt_line_search_restart():L503
+> checking gradient/search direction angle, theta:  0.200
+2024-06-04 14:52:41 | INFO  | inversion.py -> perform_line_search():L446
+> line search has failed. restarting optimization algorithm and line search.
+2024-06-04 14:52:41 | INFO  | LBFGS.py -> restart():L203
+> restarting L-BFGS optimization algorithm
+2024-06-04 14:52:41 | INFO  | gradient.py -> increment_step_count():L378
+> step count incremented -> 1
+2024-06-04 14:52:41 | INFO  | inversion.py -> perform_line_search():L407
+> 
+LINE SEARCH STEP COUNT 01
+--------------------------------------------------------------------------------
+2024-06-04 14:52:41 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 001
+2024-06-04 14:52:41 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:52:41 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:52:42 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:52:44 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:52:47 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 002
+2024-06-04 14:52:47 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:52:47 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:52:48 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:52:51 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:52:53 | INFO  | forward.py -> run_forward_simulations():L397
+> evaluating objective function for source 003
+2024-06-04 14:52:53 | DEBUG | forward.py -> run_forward_simulations():L399
+> running forward simulation with 'Specfem2D'
+2024-06-04 14:52:53 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xmeshfem2D'
+2024-06-04 14:52:54 | DEBUG | specfem.py -> _run_binary():L764
+> running executable with cmd: 'mpirun -n 40 bin/xspecfem2D'
+2024-06-04 14:52:57 | DEBUG | inversion.py -> evaluate_objective_function():L225
+> quantifying misfit with 'Dispersion'
+2024-06-04 14:53:00 | DEBUG | inversion.py -> _evaluate_line_search_misfit():L488
+> misfit for trial model (f_try; i02s01) == 0.00E+00
+2024-06-04 14:53:00 | DEBUG | bracket.py -> _print_stats():L130
+> step length(s) = 1.95E-03
+2024-06-04 14:53:00 | DEBUG | bracket.py -> _print_stats():L131
+> misfit val(s)  = 0.00E+00
